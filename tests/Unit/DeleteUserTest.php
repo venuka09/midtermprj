@@ -6,6 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\User;
+use App\Car;
 
 class DeleteUserTest extends TestCase
 {
@@ -23,5 +24,15 @@ class DeleteUserTest extends TestCase
         $user->save();
 
         $this->assertTrue($user->delete());
+    }
+    public function testDeleteCar()
+    {
+        $car = new Car();
+        $car->make = 'Toyota';
+        $car->model = 'Luxury';
+        $car->year = '2010';
+        $car->save();
+
+        $this->assertTrue($car->delete());
     }
 }
