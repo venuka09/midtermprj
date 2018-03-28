@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/', 'PagesController@homepage')->name('homepage');
 Route::get('/home', 'HomeController@index')->name('logindisplay');
+Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::get('/thanks/{name}', 'PagesController@thanks')->name('thanks');
 Route::post('/contact', 'PagesController@store')->name('contact.store');

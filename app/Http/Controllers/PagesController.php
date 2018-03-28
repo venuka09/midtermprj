@@ -10,6 +10,10 @@ class PagesController extends Controller
     {
         return view('homepage');
     }
+    function about()
+    {
+        return view('about');
+    }
     function contact()
     {
         return view('contact');
