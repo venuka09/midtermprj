@@ -27,4 +27,10 @@ class DataTypeTest extends TestCase
         $make = $car->make;
         $this->assertContains($make, ["Honda", "Ford", "Toyota"]);
     }
+    public function testDataTypeString()
+    {
+        $car = Car::inRandomOrder()->first();
+        $model = $car->model;
+        $this->assertInternalType(IsType::TYPE_STRING, $model);
+    }
 }
