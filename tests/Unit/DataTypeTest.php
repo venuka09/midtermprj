@@ -15,10 +15,16 @@ class DataTypeTest extends TestCase
      *
      * @return void
      */
-    public function testDataType()
+    public function testDataTypeInt()
     {
         $car = Car::inRandomOrder()->first();
         $year = (int)$car->year;
         $this->assertInternalType(IsType::TYPE_INT, $year);
+    }
+    public function testMake()
+    {
+        $car = Car::inRandomOrder()->first();
+        $make = $car->make;
+        $this->assertContains($make, ["Honda", "Ford", "Toyota"]);
     }
 }
